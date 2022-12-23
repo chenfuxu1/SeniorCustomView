@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/drawable/shape_button_bg.xml" value="0.1" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/activity_main.xml" value="0.16044399596367306" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/activity_main_1.xml" value="0.17753623188405798" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_five_anim_set_layout.xml" value="0.16094853683148336" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_five_key_frame_layout.xml" value="0.16094853683148336" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_five_property_values_holder_layout.xml" value="0.16094853683148336" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_five_province_layout.xml" value="0.16094853683148336" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_four_clip_by_diagonal_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_four_rotate_x_and_clip_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_four_rotate_x_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_one_custom_view.xml" value="0.9298245614035088" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_one_dash_board_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_one_pie_vie.xml" value="0.16094853683148336" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_one_pie_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_three_dynamic_sports_layout.xml" value="0.16094853683148336" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_three_dynamic_sports_view.xml" value="0.1408514492753623" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_three_multi_line_text_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_three_multi_line_type_setting_text_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_three_static_sports_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_three_text_align_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_two_xfermode_clear_view.xml" value="0.20380434782608695" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_two_xfermode_dst_atop_view.xml" value="0.20380434782608695" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_two_xfermode_dst_in_view.xml" value="0.20380434782608695" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_two_xfermode_dst_out_view.xml" value="0.20380434782608695" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_two_xfermode_dst_over_view.xml" value="0.1273965691220989" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_two_xfermode_dst_view.xml" value="0.12588294651866802" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_two_xfermode_src_atop_view.xml" value="0.12588294651866802" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_two_xfermode_src_out_view.xml" value="0.20380434782608695" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_two_xfermode_src_over_view.xml" value="0.12588294651866802" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_two_xfermode_src_view.xml" value="0.15715579710144928" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_two_xfermode_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/Users/24303/Desktop/SeniorCustomView/app/src/main/res/layout/custom_view_two_xfermode_xor_view.xml" value="0.20380434782608695" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
