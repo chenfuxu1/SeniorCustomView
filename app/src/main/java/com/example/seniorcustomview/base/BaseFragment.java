@@ -23,7 +23,13 @@ public abstract class BaseFragment extends Fragment {
 
     private View loadView(LayoutInflater inflater, ViewGroup container) {
         int resId = getResourceId();
-        return inflater.inflate(resId, container, false);
+        View rootView = inflater.inflate(resId, container, false);
+        initView(rootView);
+        return rootView;
+    }
+
+    protected void initView(View rootView) {
+
     }
 
     protected abstract int getResourceId();
