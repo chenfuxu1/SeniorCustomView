@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="MissingDefaultResource">
+
+    <com.example.seniorcustomview.customview10.view.flowview.FlowLayout android:layout_width="match_parent"
+        android:id="@+id/flow_layout"
+        android:layout_height="match_parent"
+        app:itemLeftMargin="10dp"
+        android:background="#30ff0000">
+
+    </com.example.seniorcustomview.customview10.view.flowview.FlowLayout>
+
+
+</LinearLayout>

@@ -4,4 +4,12 @@
         <attr name="isUseFloatingHint" format="boolean" />
         <attr name="isUse" format="boolean" />
     </declare-styleable>
+
+    <declare-styleable name="FlowLayout">
+        <attr name="itemLeftMargin" format="dimension" />
+        <attr name="itemTopMargin" format="dimension" />
+        <attr name="itemRightMargin" format="dimension" />
+        <attr name="itemBottomMargin" format="dimension" />
+
+    </declare-styleable>
 </resources>
