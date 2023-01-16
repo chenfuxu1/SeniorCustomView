@@ -97,6 +97,15 @@
 
         <activity android:name=".customview10.MainActivityTen"
             android:exported="true">
+            <!--<intent-filter>-->
+            <!--    <action android:name="android.intent.action.MAIN" />-->
+
+            <!--    <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <activity android:name=".customview11.MainActivityEleven"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
