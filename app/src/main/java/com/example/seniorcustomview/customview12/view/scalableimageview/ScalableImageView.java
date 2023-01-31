@@ -1,6 +1,8 @@
 package com.example.seniorcustomview.customview12.view.scalableimageview;
 
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -9,6 +11,7 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.OverScroller;
 
@@ -56,6 +59,8 @@ public class ScalableImageView extends View implements GestureDetector.OnGesture
             refresh();
         }
     };
+    private CustomScaleGestureListener mCustomScaleGestureListener = new CustomScaleGestureListener(); // 双指缩放的监听
+    private ScaleGestureDetector mScaleGestureDetector; // 双指缩放
 
     public ScalableImageView(Context context) {
         this(context, null);
@@ -75,7 +80,7 @@ public class ScalableImageView extends View implements GestureDetector.OnGesture
         // 给 mGestureDetectorCompat 设置双击监听
         mGestureDetectorCompat.setOnDoubleTapListener(new GestureDetector.OnDoubleTapListener() {
             /**
-             * 支持双击的境况下用该方法更准确，不支持双击的时候用 onSingleTapUp 更准确
+             * 支持双击的情况下用该方法更准确，不支持双击的时候用 onSingleTapUp 更准确
              * 支持双击时，第一次按下抬起后，会等待 300ms，如果 300ms 内第二次按下了，会触发 onDoubleTap 方法
              * 如果 300ms 内没按下，会触发 onSingleTapConfirmed 方法
              * 所以支持双击的情况，用 onSingleTapConfirmed 方法比较准确
@@ -101,6 +106,14 @@ public class ScalableImageView extends View implements GestureDetector.OnGesture
                 // 1、双击时切换显示的 scale
                 mIsBigOrSmallScale = !mIsBigOrSmallScale;
                 if (mIsBigOrSmallScale) {
+                    /**
+                     * e.getX() - getWidth() / 2 表示点击点相对于中心放缩点的偏移值
+                     * (e.getX() - getWidth() / 2) * (1 - mBigScale / mSmallScale) 表示带点击放大后 该点 与 点击点位置的偏移值
+                     * 将 mFingerOffsetX 赋值为放大后 该点 与 点击点位置的偏移值，这样便可以实现从点击的位置处开始放大
+                     */
+                    mFingerOffsetX = (e.getX() - getWidth() / 2f) * (1 - mBigScale / mSmallScale);
+                    mFingerOffsetY = (e.getY() - getHeight() / 2f) * (1 - mBigScale / mSmallScale);
+                    fixOffsets();
                     startAnim();
                 } else {
                     reverseAnim();
@@ -119,6 +132,7 @@ public class ScalableImageView extends View implements GestureDetector.OnGesture
             }
         });
         mOverScroller = new OverScroller(context);
+        mScaleGestureDetector = new ScaleGestureDetector(context, mCustomScaleGestureListener);
 
     }
 
@@ -148,27 +162,33 @@ public class ScalableImageView extends View implements GestureDetector.OnGesture
         }
         mSmallScale = Math.max(tempSmallScale, mSmallScale);
         mBigScale = Math.max(tempBigScale, mBigScale) * EXTRA_SCALE_FRACTOR;
+        mCurrentScale = mSmallScale;
+        if (mScaleAnimator != null) {
+            mScaleAnimator.setFloatValues(mSmallScale, mBigScale);
+        } else {
+            mScaleAnimator = ObjectAnimator.ofFloat(this, "currentScale", mSmallScale, mBigScale);
+        }
         Logit.d(TAG, "cfx mSmallScale = " + mSmallScale + " mBigScale = " + mBigScale);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        mScaleFraction = (mCurrentScale - mSmallScale) / (mBigScale - mSmallScale);
         // 3、移动图片的位置
-        canvas.translate(mFingerOffsetX, mFingerOffsetY);
-        mCurrentScale = mSmallScale + (mBigScale - mSmallScale) * mScaleFraction;
+        canvas.translate(mFingerOffsetX * mScaleFraction, mFingerOffsetY * mScaleFraction);
         // 2、开始放缩
         canvas.scale(mCurrentScale, mCurrentScale, getWidth() / 2, getHeight() / 2);
         // 1、倒着想，先画图
         canvas.drawBitmap(mBitmap, mOriginalOffsetX, mOriginalOffsetY, mPaint);
     }
 
-    public float getScaleFraction() {
-        return mScaleFraction;
+    public float getCurrentScale() {
+        return mCurrentScale;
     }
 
-    public void setScaleFraction(float scaleFraction) {
-        mScaleFraction = scaleFraction;
+    public void setCurrentScale(float currentScale) {
+        mCurrentScale = currentScale;
         invalidate();
     }
 
@@ -177,24 +197,28 @@ public class ScalableImageView extends View implements GestureDetector.OnGesture
      */
     private void startAnim() {
         resetAnim();
-        mScaleAnimator = ObjectAnimator.ofFloat(this, "scaleFraction", 0f, 1f);
+        mScaleAnimator = ObjectAnimator.ofFloat(this, "currentScale", mSmallScale, mBigScale);
         mScaleAnimator.setDuration(500);
         mScaleAnimator.start();
     }
 
     private void reverseAnim() {
         resetAnim();
-        mScaleAnimator = ObjectAnimator.ofFloat(this, "scaleFraction", 1f, 0f);
+        mScaleAnimator = ObjectAnimator.ofFloat(this, "currentScale", mBigScale, mSmallScale);
         mScaleAnimator.setDuration(500);
         mScaleAnimator.start();
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        mScaleGestureDetector.onTouchEvent(event);
         /**
          * 重写 onTouchEvent 方法，使用，mGestureDetectorCompat 的 onTouchEvent 方法
          */
-        return mGestureDetectorCompat.onTouchEvent(event);
+        if (!mScaleGestureDetector.isInProgress()) {
+            mGestureDetectorCompat.onTouchEvent(event);
+        }
+        return true;
     }
 
     @Override
@@ -255,14 +279,21 @@ public class ScalableImageView extends View implements GestureDetector.OnGesture
              * 正向移动时，mFingerOffsetX 为 mFingerOffsetX 与 (mBitmap.getWidth() * mBigScale- getWidth()) / 2 的最小值
              * 负向移动是，mFingerOffsetX 为 mFingerOffsetX 与 -(mBitmap.getWidth() * mBigScale- getWidth()) / 2 的最大值
              */
-            mFingerOffsetX = Math.min(mFingerOffsetX, (mBitmap.getWidth() * mBigScale - getWidth()) / 2);
-            mFingerOffsetX = Math.max(mFingerOffsetX, -(mBitmap.getWidth() * mBigScale - getWidth()) / 2);
             mFingerOffsetY -= distanceY;
-            mFingerOffsetY = Math.min(mFingerOffsetY, (mBitmap.getHeight() * mBigScale - getHeight()) / 2);
-            mFingerOffsetY = Math.max(mFingerOffsetY, -(mBitmap.getHeight() * mBigScale - getHeight()) / 2);
+            fixOffsets();
             invalidate();
         }
         return true;
+    }
+
+    /**
+     * 修正 mFingerOffsetX、mFingerOffsetY 保证不超出边界
+     */
+    private void fixOffsets() {
+        mFingerOffsetX = Math.min(mFingerOffsetX, (mBitmap.getWidth() * mBigScale - getWidth()) / 2);
+        mFingerOffsetX = Math.max(mFingerOffsetX, -(mBitmap.getWidth() * mBigScale - getWidth()) / 2);
+        mFingerOffsetY = Math.min(mFingerOffsetY, (mBitmap.getHeight() * mBigScale - getHeight()) / 2);
+        mFingerOffsetY = Math.max(mFingerOffsetY, -(mBitmap.getHeight() * mBigScale - getHeight()) / 2);
     }
 
     /**
@@ -324,5 +355,57 @@ public class ScalableImageView extends View implements GestureDetector.OnGesture
         resetAnim();
     }
 
+    /**
+     * 检测双指缩小/放大的监听器
+     */
+    private class CustomScaleGestureListener implements ScaleGestureDetector.OnScaleGestureListener {
+        /**
+         * 手指捏动，缩小/放大的过程中，该方法调用
+         * @param detector
+         * @return
+         */
+        @Override
+        public boolean onScale(ScaleGestureDetector detector) {
+            float tempScale = mCurrentScale * mScaleGestureDetector.getScaleFactor();
+            /**
+             * 如果返回 false，表示不消费 mScaleGestureDetector.getScaleFactor() 返回当前状态与初始状态的放缩系数比值
+             * 如果返回 true，表示消费，mScaleGestureDetector.getScaleFactor() 返回当前状态与上一个状态的放缩系数比值
+             */
+            if (tempScale < mSmallScale || tempScale > mBigScale) {
+                return false;
+            } else {
+                mCurrentScale = tempScale;
+                setCurrentScale(mCurrentScale);
+                Logit.d(TAG, "cfx mCurrentScale = " + mCurrentScale);
+                return true;
+            }
+
+
+        }
+
+        /**
+         * 手指开始捏动的时候，该方法开始调用
+         * @param detector
+         * @return
+         */
+        @Override
+        public boolean onScaleBegin(ScaleGestureDetector detector) {
+            /**
+             * mScaleGestureDetector.getFocusX() 为两指之间中心的坐标
+             */
+            mFingerOffsetX = (mScaleGestureDetector.getFocusX() - getWidth() / 2f) * (1 - mBigScale / mSmallScale);
+            mFingerOffsetY = (mScaleGestureDetector.getFocusY() - getHeight() / 2f) * (1 - mBigScale / mSmallScale);
+            return true;
+        }
+
+        /**
+         * 停止捏动的时候，该方法调用
+         * @param detector
+         */
+        @Override
+        public void onScaleEnd(ScaleGestureDetector detector) {
+
+        }
+    }
 
 }
