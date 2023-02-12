@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.seniorcustomview.customview14.view.TwoPagerView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <View android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#795548" />
+
+    <View android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#388E3C" />
+
+
+</com.example.seniorcustomview.customview14.view.TwoPagerView>
