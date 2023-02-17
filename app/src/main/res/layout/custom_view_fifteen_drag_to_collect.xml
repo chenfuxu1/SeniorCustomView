@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.seniorcustomview.customview15.view.DragToCollectLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="MissingDefaultResource">
+
+    <ImageView
+        android:id="@+id/avatar_view"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_weight="1"
+        android:contentDescription="Avatar"
+        android:src="@mipmap/liuyifei"
+        app:layout_constraintEnd_toStartOf="@id/logo_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logo_view"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_weight="1"
+        android:contentDescription="Logo"
+        android:src="@mipmap/jinshang"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/avatar_view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/collector_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="#78909C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal" />
+
+
+</com.example.seniorcustomview.customview15.view.DragToCollectLayout>

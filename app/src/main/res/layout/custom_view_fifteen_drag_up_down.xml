@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.seniorcustomview.customview15.view.DragUpDownLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <View
+        android:id="@+id/dragged_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#388E3C"/>
+
+</com.example.seniorcustomview.customview15.view.DragUpDownLayout>
