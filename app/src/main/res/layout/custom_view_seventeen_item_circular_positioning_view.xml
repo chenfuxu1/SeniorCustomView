@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <!--相对位置旋转角度定位(控件本身未旋转，只是位置旋转了)-->
+    <View android:id="@+id/sun"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#ff0000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--app:layout_constraintCircle="@id/sun" 表示相对于太阳定位-->
+    <!--app:layout_constraintCircleRadius="150dp" 表示地球控件的中心与太阳控件的中心为 150dp-->
+    <!--app:layout_constraintCircleAngle="45" 起始角度为 y 轴正方向，为 0 度，顺时针旋转为正，表示旋转了 45 度-->
+    <View android:id="@+id/earth"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="#886655"
+        app:layout_constraintCircle="@id/sun"
+        app:layout_constraintCircleAngle="45"
+        app:layout_constraintCircleRadius="150dp"
+        tools:ignore="MissingConstraints" />
+
+    <!--app:layout_constraintCircle="@id/earth" 表示相对于地球定位-->
+    <!--app:layout_constraintCircleRadius="40dp" 表示月球控件的中心与地球控件的中心为 40dp-->
+    <!--app:layout_constraintCircleAngle="225" 表示在圆弧上旋转了 225 度-->
+    <View android:id="@+id/moon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="#346547"
+        app:layout_constraintCircle="@id/earth"
+        app:layout_constraintCircleAngle="225"
+        app:layout_constraintCircleRadius="40dp"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

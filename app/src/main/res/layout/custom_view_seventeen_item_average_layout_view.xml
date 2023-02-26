@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <!--控件等分布局空间-->
+
+    <View
+        android:id="@+id/view_one"
+        android:layout_width="80dp"
+        android:layout_height="200dp"
+        android:background="#ff00ff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/view_two"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/view_two"
+        android:layout_width="80dp"
+        android:layout_height="200dp"
+        android:background="#ffff00"
+        app:layout_constraintStart_toEndOf="@+id/view_one"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/view_three"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/view_three"
+        android:layout_width="80dp"
+        android:layout_height="200dp"
+        android:background="#00ffff"
+        app:layout_constraintStart_toEndOf="@+id/view_two"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

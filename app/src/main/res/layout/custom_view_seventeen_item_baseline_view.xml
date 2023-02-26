@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <!--文字设置基线对齐-->
+
+    <TextView android:id="@+id/text_view_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="#10ff00ff"
+        android:text="99"
+        android:textSize="128sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--app:layout_constraintBaseline_toBaselineOf="@+id/text_view_one" 表示基线对齐-->
+    <!--这样便能实现 99 与 % 号在同一水平线上-->
+    <TextView android:id="@+id/text_view_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#100000ff"
+        android:text="%"
+        android:textSize="26sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/text_view_one"
+        app:layout_constraintStart_toEndOf="@+id/text_view_one" />
+
+
+
+    <TextView android:id="@+id/text_view_three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="300dp"
+        android:background="#10123456"
+        android:text="99"
+        android:textSize="128sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--app:layout_constraintBottom_toBottomOf="@+id/text_view_three" 表示控件底部对齐-->
+    <TextView android:id="@+id/text_view_four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#10546677"
+        android:text="%"
+        android:textSize="26sp"
+        app:layout_constraintStart_toEndOf="@+id/text_view_three"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_three" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

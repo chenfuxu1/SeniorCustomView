@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/constraint_start"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <!--初始化加载该布局，点击时动态加载另一个 constraint_end.xml 中的布局-->
+    <!--通过 ConstraintSet 复制 constraint_end.xml 中的布局约束-->
+    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/twitter"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/liu"
+        android:tint="#00ACED"
+        app:layout_constraintEnd_toStartOf="@+id/wechat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/wechat"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/jinshang"
+        android:tint="#51C332"
+        app:layout_constraintEnd_toStartOf="@+id/weibo"
+        app:layout_constraintStart_toEndOf="@+id/twitter"
+        app:layout_constraintTop_toTopOf="@+id/twitter" />
+
+    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/weibo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/yihu"
+        android:tint="#D32024"
+        app:layout_constraintEnd_toStartOf="@+id/qzone"
+        app:layout_constraintStart_toEndOf="@+id/wechat"
+        app:layout_constraintTop_toTopOf="@+id/wechat" />
+
+    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/qzone"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/qixai"
+        android:tint="#FFCE00"
+        app:layout_constraintEnd_toStartOf="@+id/wechat_friend"
+        app:layout_constraintStart_toEndOf="@+id/weibo"
+        app:layout_constraintTop_toTopOf="@+id/weibo" />
+
+    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/wechat_friend"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/sha"
+        android:tint="#51C332"
+        app:layout_constraintEnd_toStartOf="@+id/qq"
+        app:layout_constraintStart_toEndOf="@+id/qzone"
+        app:layout_constraintTop_toTopOf="@+id/qzone" />
+
+    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/qq"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/liuyifei"
+        android:tint="#001DED"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/wechat_friend"
+        app:layout_constraintTop_toTopOf="@+id/wechat_friend" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <!--同 Group 类似，Layer 也是放入一个组内，一起进行控制-->
+    <!--这个时候只要对组进行操作即可-->
+    <Button android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textSize="20sp"
+        android:text="点击控制整个 Layer 旋转"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--app:constraint_referenced_ids="view_one,view_two,view_three,view_four" 将各个 view 放进组内-->
+    <androidx.constraintlayout.helper.widget.Layer android:id="@+id/layer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="view_1,view_2,view_3,view_4"
+        tools:ignore="MissingConstraints" />
+
+    <View android:id="@+id/view_1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="100dp"
+        android:background="#ffff00"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View android:id="@+id/view_2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="100dp"
+        android:background="#ff00ff"
+        app:layout_constraintStart_toEndOf="@id/view_1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View android:id="@+id/view_3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#0000ff"
+        app:layout_constraintStart_toStartOf="@id/view_2"
+        app:layout_constraintTop_toBottomOf="@id/view_2" />
+
+    <View android:id="@+id/view_4"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#654665"
+        app:layout_constraintStart_toEndOf="@id/view_3"
+        app:layout_constraintTop_toTopOf="@id/view_3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

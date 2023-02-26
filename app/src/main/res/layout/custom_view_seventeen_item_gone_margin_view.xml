@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <!--app:layout_goneMarginStart 设置 goneMarin 可以在目标控件隐藏时，显示出来这个 margin，目标控件显示的时候，该 margin 不生效-->
+
+    <TextView android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="这是可能要隐藏的文本内容"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView android:id="@+id/avatar_view"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/sha"
+        app:layout_constraintStart_toEndOf="@+id/content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginStart="20dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

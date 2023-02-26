@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <!--让控件相对于某一条线上下居中显示-->
+
+    <ImageView android:id="@+id/avatar_view"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/liuyifei"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <!--设置该控件的上下约束都是该图片的底部一条线，便可实现该控件相对于这条线上下居中-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/avatar_view" -->
+    <!--app:layout_constraintBottom_toBottomOf="@+id/avatar_view"-->
+    <Button android:id="@+id/click_btn"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="30dp"
+        android:padding="10dp"
+        android:text="点击关注"
+        app:layout_constraintTop_toBottomOf="@+id/avatar_view"
+        app:layout_constraintBottom_toBottomOf="@+id/avatar_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

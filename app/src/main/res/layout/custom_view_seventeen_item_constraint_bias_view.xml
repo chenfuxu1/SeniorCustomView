@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <!--模仿聊天记录的布局：头像加文字，文字居左显示，且显示在固定宽度范围内-->
+
+    <ImageView android:id="@+id/avatar_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/sha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--app:layout_constraintHorizontal_bias="0" 的范围是 0-1，设置为 0，表示偏移为 0，在最左侧开始显示，设置为1，在最右侧开始显示-->
+    <!--app:layout_constrainedWidth="true" 限定显示的内容在设置的范围以内-->
+    <TextView android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintHorizontal_bias="0"
+        android:text="这是聊天的内容, 如果想要居左显示，可以设置 layout_constraintHorizontal_bias 属性"
+        app:layout_constraintStart_toEndOf="@+id/avatar_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/avatar_view"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

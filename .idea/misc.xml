@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/activity_main.xml" value="0.16094853683148336" />
         <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_eight_one_hundred_view.xml" value="0.16094853683148336" />
         <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_eleven_custom_tool_tip_view.xml" value="0.16246215943491424" />
         <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_eleven_custom_touch_view.xml" value="0.16246215943491424" />
@@ -15,6 +16,34 @@
         <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_nine_circle_view.xml" value="0.16094853683148336" />
         <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_nine_square_image_view.xml" value="0.1802536231884058" />
         <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seven_material_edit_text_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_average_layout_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_average_layout_view_2.xml" value="0.16094853683148336" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_average_layout_view_3.xml" value="0.16094853683148336" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_barrier_view.xml" value="0.13975782038345105" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_baseline_view.xml" value="0.16246215943491424" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_center_image_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_center_of_oneline_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_chain_style_packaged_view.xml" value="0.13723511604439959" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_chain_style_packed_view.xml" value="0.1" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_chain_style_spread_inside_view.xml" value="0.13723511604439959" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_chain_style_spread_view.xml" value="0.13723511604439959" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_circular_positioning_view.xml" value="0.16246215943491424" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_constrained_width_view.xml" value="0.13723511604439959" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_constraint_bias_view.xml" value="0.13723511604439959" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_constraint_end_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_constraint_set_view.xml" value="0.15060544904137235" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_constraint_start_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_dimension_ratio_view.xml" value="0.14666666666666667" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_flow_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_gone_margin_view.xml" value="0.13723511604439959" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_group_view.xml" value="0.15287588294651866" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_guide_line_view.xml" value="0.15287588294651866" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_helper_view.xml" value="0.13824419778002017" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_layer_view.xml" value="0.15287588294651866" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_linear_view.xml" value="0.13333333333333333" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_message_view.xml" value="0.3333333333333333" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_place_holder_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_seventeen_item_width_percent_view.xml" value="0.15287588294651866" />
         <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_six_drawable_view.xml" value="0.16094853683148336" />
         <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_six_mesh_drawable.xml" value="0.16094853683148336" />
         <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_sixteen_nested_scalable_image_view.xml" value="0.16094853683148336" />

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <!--在空间内部等分布局，第一个和最后一个 view 紧贴边界-->
+    <!--app:layout_constraintVertical_chainStyle="spread_inside" 在空间内部等分布局-->
+
+    <View
+        android:id="@+id/view_one"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#ffff00"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/view_two"
+        />
+
+    <View
+        android:id="@+id/view_two"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#995454"
+        app:layout_constraintStart_toEndOf="@id/view_one"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/view_three"
+        />
+
+    <View
+        android:id="@+id/view_three"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#734593"
+        app:layout_constraintStart_toEndOf="@id/view_two"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/view_four"
+        />
+
+    <View
+        android:id="@+id/view_four"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#993366"
+        app:layout_constraintStart_toEndOf="@id/view_three"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

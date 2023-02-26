@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <!--多个控件打包成一个整体-->
+    <!--app:layout_constraintVertical_chainStyle="packed" 将多个控件打包成一个整体-->
+    <!--ps1：layout_constraintVertical_chainStyle 属性写在第一个控件的位置（第一个往后），才生效-->
+    <!--ps2: 可以结合 layout_constraintVertical_bias 属性，做整体的偏移移动-->
+    <ImageView
+        android:id="@+id/avatar_view"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@mipmap/sha"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/content"
+        />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:background="#ff00ff"
+        android:textColor="@color/white"
+        android:text="粉丝金色假发角色发Jews解放军附件是的加法计算的"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avatar_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <!--通过 Flow 完成多个控件位置的摆放-->
+    <!--app:flow_verticalGap="20dp" 设置纵向控件之间的间距-->
+    <!--app:flow_horizontalGap="20dp" 设置横向控件之间的间距-->
+    <!--android:orientation="horizontal" 设置方向为横向-->
+    <!--app:flow_wrapMode="chain" chain：链形式，特性是尾行不足一行时，平分剩余空间，aligned: 对齐展示，此对齐是绝对对齐，如果视图大小不一，也会上下对齐-->
+
+    <!--Flow相关链约束：-->
+    <!--app:flow_horizontalStyle：约束所有水平链样式-->
+    <!--app:flow_verticalStyle：约束所有垂直链样式-->
+    <!--flow_firstHorizontalStyle：约束水平样式首行链样式-->
+    <!--flow_firstVerticalStyle：约束垂直样式首行链样式-->
+    <!--flow_lastHorizontalStyle：约束水平样式尾行链样式-->
+    <!--flow_lastVerticalStyle：约束垂直样式尾行链样式-->
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:flow_wrapMode="chain"
+        android:background="#38112233"
+        android:orientation="horizontal"
+        app:flow_horizontalGap="20dp"
+        app:flow_verticalGap="20dp"
+        app:constraint_referenced_ids="view_one,view_two,view_three,view_four,view_five,view_six"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_one"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#ffff00" />
+
+
+    <View
+        android:id="@+id/view_two"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#654654"
+        tools:ignore="MissingConstraints" />
+
+
+    <View
+        android:id="@+id/view_three"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#224349"
+        tools:ignore="MissingConstraints" />
+
+
+    <View
+        android:id="@+id/view_four"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#999999"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/view_five"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#774323"
+        tools:ignore="MissingConstraints" />
+
+
+    <View
+        android:id="@+id/view_six"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#753367"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
