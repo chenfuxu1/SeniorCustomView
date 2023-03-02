@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--app:duration="3000" 动画执行时间为 3s-->
+    <!--app:motionInterpolator="bounce" 设置整个动画的插值器-->
+    <Transition app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@id/start"
+        app:duration="3000">
+
+        <!--创建点击事件-->
+        <OnClick app:clickAction="toggle"
+            app:targetId="@+id/view" />
+
+        <!--属性关键帧-->
+        <KeyFrameSet>
+            <!--app:framePosition="50" 表示动画执行到 50% 的时候-->
+            <!--<KeyAttribute android:rotation="360"-->
+            <!--    android:scaleX="2"-->
+            <!--    android:scaleY="2"-->
+            <!--    app:framePosition="50"-->
+            <!--    app:motionTarget="@id/view" />-->
+
+            <!--位置关键帧 app:framePosition="50" 表示动画执行到 50% 的时候-->
+            <!--位置在 x 轴方向的 75%，y 轴方向的 25%-->
+            <!--app:pathMotionArc="flip" 想要生效，需要在开始（start）的位置设置：<Motion app:pathMotionArc="startVertical" />-->
+            <!--<KeyPosition-->
+            <!--    app:framePosition="50"-->
+            <!--    app:pathMotionArc="flip"-->
+            <!--    app:keyPositionType="parentRelative"-->
+            <!--    app:motionTarget="@id/view"-->
+            <!--    app:percentX="0.75"-->
+            <!--    app:percentY="0.25"-->
+            <!--    />-->
+
+            <!--循环关键帧-->
+            <!--app:framePosition="0" 动画完成度-->
+            <!--app:waveShape="sin" 循环的形状-->
+            <!--app:wavePeriod="0" 循环的次数-->
+            <!--<KeyCycle-->
+            <!--    app:framePosition="0"-->
+            <!--    app:motionTarget="@id/view"-->
+            <!--    android:rotation="0"-->
+            <!--    app:waveShape="sin"-->
+            <!--    app:wavePeriod="0" />-->
+
+            <!--<KeyCycle-->
+            <!--    app:framePosition="50"-->
+            <!--    app:motionTarget="@id/view"-->
+            <!--    android:rotation="45"-->
+            <!--    app:waveShape="sin"-->
+            <!--    app:wavePeriod="3" />-->
+
+            <!--<KeyCycle-->
+            <!--    app:framePosition="100"-->
+            <!--    app:motionTarget="@id/view"-->
+            <!--    android:rotation="0"-->
+            <!--    app:waveShape="sin"-->
+            <!--    app:wavePeriod="0" />-->
+
+            <!--时间循环关键帧-->
+            <KeyIimeCycle
+                app:framePosition="0"
+                app:motionTarget="@id/view"
+                android:rotation="0"
+                app:waveShape="sin"
+                app:wavePeriod="0" />
+
+            <!--app:wavePeriod="1" 表示每秒循环 1 次-->
+            <KeyIimeCycle
+                app:framePosition="50"
+                app:motionTarget="@id/view"
+                android:rotation="45"
+                app:waveShape="sin"
+                app:wavePeriod="1" />
+
+            <KeyIimeCycle
+                app:framePosition="100"
+                app:motionTarget="@id/view"
+                android:rotation="0"
+                app:waveShape="sin"
+                app:wavePeriod="0" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/view">
+
+            <!--app:pathMotionArc="startVertical" 设置垂直方向的弧线路径-->
+            <Motion app:pathMotionArc="startVertical" />
+
+            <Layout android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="#008577"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--自定义属性，指定开始的颜色-->
+            <!--<CustomAttribute-->
+            <!--    app:attributeName="backgroundColor"-->
+            <!--    app:customColorValue="#ff0000"-->
+            <!--    />-->
+
+            <!--自定义属性，改变图片的饱和度-->
+            <CustomAttribute app:attributeName="Saturation"
+                app:customFloatValue="1" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@+id/view">
+            <Layout android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="#008577"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!--旋转动画加在结束的节点上-->
+            <!--<Transform android:rotation="360"-->
+            <!--    android:scaleX="1.8"-->
+            <!--    android:scaleY="1.8" />-->
+
+            <!--自定义属性，指定结束的颜色-->
+            <!--<CustomAttribute-->
+            <!--    app:attributeName="backgroundColor"-->
+            <!--    app:customColorValue="@color/black"-->
+            <!--    />-->
+
+            <!--自定义属性，改变图片的饱和度-->
+            <CustomAttribute app:attributeName="Saturation"
+                app:customFloatValue="0" />
+        </Constraint>
+
+    </ConstraintSet>
+</MotionScene>

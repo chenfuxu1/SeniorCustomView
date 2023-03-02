@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!--app:showPaths="true" 表示显示动画轨迹-->
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    app:layoutDescription="@xml/motion_2"
+    app:showPaths="true">
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView android:id="@+id/view"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#008577"
+        android:scaleType="fitXY"
+        android:src="@mipmap/sha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

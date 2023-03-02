@@ -3,8 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/drawable/ic_bookmark_24dp.xml" value="0.1125" />
         <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/activity_main.xml" value="0.16094853683148336" />
         <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_eight_one_hundred_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_eighteen_motion_layout_2_view.xml" value="0.1" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_eighteen_motion_layout_end_view.xml" value="0.1" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_eighteen_motion_layout_start_view.xml" value="0.1" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_eighteen_motion_layout_view.xml" value="0.13900100908173563" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_eighteen_object_animator_2_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_eighteen_object_animator_view.xml" value="0.16044399596367306" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_eighteen_transition_go_end_scene_view.xml" value="0.1537037037037037" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_eighteen_transition_go_start_scene_view.xml" value="0.16094853683148336" />
+        <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_eighteen_transition_go_view.xml" value="0.16094853683148336" />
         <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_eleven_custom_tool_tip_view.xml" value="0.16246215943491424" />
         <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_eleven_custom_touch_view.xml" value="0.16246215943491424" />
         <entry key="..\:/F/GitProgram/SeniorCustomView/app/src/main/res/layout/custom_view_eleven_touch_view.xml" value="0.16246215943491424" />
